@@ -1,0 +1,16 @@
+server:
+  tomcat:
+    uri-encoding: UTF-8
+  port: 8080
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/crawl?useUnicode=true&characterEncoding=utf8&jdbcCompliantTruncation=true&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true
+    username: yoofy
+    password: woshiliuaofei
+    type: com.alibaba.druid.pool.DruidDataSource
+
+mybatis:
+  type-aliases-package: com.yoofy.crawl.model,com.yoofy.crawl.modelEx
+  mapper-locations: classpath*:mapper/com/yoofy/crawl/**/*.xml

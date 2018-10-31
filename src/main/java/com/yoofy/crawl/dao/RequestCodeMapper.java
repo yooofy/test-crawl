@@ -6,6 +6,10 @@ import java.util.List;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
+/**
+ * @author yoofy.liu
+ * @date 2018/10/31 15:36
+ */
 @Repository
 public interface RequestCodeMapper {
     int countByExample(RequestCodeExample example);

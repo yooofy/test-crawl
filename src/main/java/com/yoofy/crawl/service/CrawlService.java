@@ -1,9 +1,13 @@
 package com.yoofy.crawl.service;
 
 import com.yoofy.crawl.dao.RequestCodeMapper;
+import com.yoofy.crawl.model.RequestCode;
+import com.yoofy.crawl.model.RequestCodeExample;
 import com.yoofy.crawl.vo.BaseReturnVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * @author yoofy.liu
@@ -15,6 +19,10 @@ public class CrawlService {
     private RequestCodeMapper requestCodeMapper;
 
     public BaseReturnVO testConnection(){
-        return new BaseReturnVO();
+        RequestCodeExample requestCodeExample = new RequestCodeExample();
+        requestCodeExample.createCriteria().andIdEqualTo(1);
+        List<RequestCode> requestCodeList = requestCodeMapper.selectByExample(requestCodeExample);
+
+        return new BaseReturnVO(requestCodeList);
     }
 }
