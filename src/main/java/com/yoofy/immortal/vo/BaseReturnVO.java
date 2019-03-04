@@ -1,4 +1,4 @@
-package com.yoofy.crawl.vo;
+package com.yoofy.immortal.vo;
 
 /**
  * @author yoofy.liu
@@ -12,15 +12,21 @@ public class BaseReturnVO {
     public BaseReturnVO() {
     }
 
+    public BaseReturnVO(Object data) {
+        this.code = 200;
+        this.description = "ok";
+        this.data = data;
+    }
+
     public BaseReturnVO(Integer code, String description) {
         this.code = code;
         this.description = description;
         this.data = "";
     }
 
-    public BaseReturnVO(Object data) {
-        this.code = 200;
-        this.description = "ok";
+    public BaseReturnVO(Integer code, String description, Object data) {
+        this.code = code;
+        this.description = description;
         this.data = data;
     }
 

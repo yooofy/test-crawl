@@ -6,11 +6,16 @@ server:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/crawl?useUnicode=true&characterEncoding=utf8&jdbcCompliantTruncation=true&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true
+    url: jdbc:mysql://localhost:3306/immortal?useUnicode=true&characterEncoding=utf8&jdbcCompliantTruncation=true&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true
     username: yoofy
     password: woshiliuaofei
     type: com.alibaba.druid.pool.DruidDataSource
+  thymeleaf:
+    prefix: classpath:/templates/  # 默认模版路径前缀
+    cache: false  # 开发时关闭缓存,不然没法看到实时页面
+  resources:
+    static-locations: classpath:/static/,classpath:/templates/
 
 mybatis:
-  type-aliases-package: com.yoofy.crawl.model,com.yoofy.crawl.modelEx
-  mapper-locations: classpath*:mapper/com/yoofy/crawl/**/*.xml
+  type-aliases-package: com.yoofy.immortal.model,com.yoofy.immortal.modelEx
+  mapper-locations: classpath*:mapper/com/yoofy/immortal/**/*.xml
